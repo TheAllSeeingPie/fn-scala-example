@@ -1,7 +1,12 @@
 package com.example.fn
 
-object HelloWorld {
-  def hello(value: Option[String]) = {
+class HelloWorld {
+  def hello(input: String) = {
+    val value = input match {
+      case "" => None
+      case null => None
+      case _ => Some(input)
+    }
     "Hello, " + value.getOrElse("world") + "!"
   }
 }
